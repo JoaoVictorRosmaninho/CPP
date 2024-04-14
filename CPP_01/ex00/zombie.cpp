@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/14 09:25:35 by jv                #+#    #+#             */
-/*   Updated: 2024/04/14 09:56:02 by jv               ###   ########.fr       */
+/*   Updated: 2024/04/14 13:52:23 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Zombie::Zombie(std::string name) {
 }
 
 Zombie::~Zombie() {
-    
+    std::cout << this->name << ": destroyed!" << std::endl;
 }
 
 void Zombie::announce(void) {
