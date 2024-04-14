@@ -6,12 +6,12 @@
 #    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/04/14 09:26:28 by jv               ###   ########.fr        #
+#    Updated: 2024/04/14 09:56:55 by jv               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= g++
-NAME   	:= phonebook
+NAME   	:= zombie
 CFLAGS 	:= -Wall -Wextra -Werror -g -I.
 STD    	:= -std=c++98 -pedantic
 SOURCE 	:= $(shell find . -type f -name '*.cpp')
