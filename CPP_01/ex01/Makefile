@@ -6,14 +6,14 @@
 #    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/04/14 17:45:12 by jv               ###   ########.fr        #
+#    Updated: 2024/04/14 19:42:22 by jv               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC	   	:= g++
+CC	   	:= c++
 NAME   	:= zombieHorder
 CFLAGS 	:= -Wall -Wextra -Werror -g -I.
-STD    	:= -std=c++98 -pedantic
+STD    	:= -std=c++98
 SOURCE 	:= $(shell find . -type f -name '*.cpp')
 OBJECTS := $(SOURCE:.cpp=.o)
 
