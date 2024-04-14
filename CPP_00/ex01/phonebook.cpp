@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 22:41:50 by jv                #+#    #+#             */
-/*   Updated: 2024/04/14 11:19:59 by jv               ###   ########.fr       */
+/*   Updated: 2024/04/14 13:09:33 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void Phonebook::add_contacts() {
 }
 
 void Phonebook::display_list()  {
+    short int index;
+    
     if (total_contacts < 1) {
         std::cout << "Empty List" << std::endl;
         return ;
@@ -42,7 +44,11 @@ void Phonebook::display_list()  {
         this->contacts[i].show_sumarize();
     }
 
-    show_contact_info(Input::read_contact_index());
+    do {
+        index = Input::read_contact_index();
+    } while (index > total_contacts - 1) ;
+    
+    show_contact_info(index);
 }
 
 void Phonebook::show_contact_info(short int index) {

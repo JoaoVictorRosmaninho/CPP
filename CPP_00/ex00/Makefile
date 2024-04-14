@@ -6,14 +6,14 @@
 #    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/04/14 10:35:12 by jv               ###   ########.fr        #
+#    Updated: 2024/04/14 13:01:28 by jv               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= c++
 NAME   	:= megaphone
 CFLAGS 	:= -Wall -Wextra -Werror
-STD    	:= -std=c++98 -pedantic
+STD    	:= -std=c++98
 SOURCE 	:= megaphone.cpp
 
 GREEN	:=	\e[92;5;118m

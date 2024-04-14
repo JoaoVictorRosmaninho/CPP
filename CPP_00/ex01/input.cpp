@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:20:41 by jv                #+#    #+#             */
-/*   Updated: 2024/04/14 11:28:38 by jv               ###   ########.fr       */
+/*   Updated: 2024/04/14 13:11:00 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,6 @@ short int Input::read_contact_index() {
     while(true) {
         std::cout << "Insert the contact index: " << std::flush;
         std::cin  >> index;
-
-        std::cout << index << std::endl;
 
         if (index >= 0 && index < MAX_CONTACTS)
             return index;
