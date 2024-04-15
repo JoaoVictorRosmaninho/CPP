@@ -6,12 +6,12 @@
 #    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/04/15 00:15:27 by jv               ###   ########.fr        #
+#    Updated: 2024/04/15 00:18:06 by jv               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= c++
-NAME   	:= violence
+NAME   	:= sed
 CFLAGS 	:= -Wall -Wextra -Werror -g -I.
 STD    	:= -std=c++98
 SOURCE 	:= $(shell find . -type f -name '*.cpp')
