@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 00:21:45 by jv                #+#    #+#             */
-/*   Updated: 2024/04/15 00:43:30 by jv               ###   ########.fr       */
+/*   Updated: 2024/04/15 20:10:18 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Sed {
     void execute(void);
 
     private:
-        std::ifstream fin;
+        std::fstream file;
         const std::string&  from;
         const std::string&  to;
     
