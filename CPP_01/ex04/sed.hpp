@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 00:21:45 by jv                #+#    #+#             */
-/*   Updated: 2024/04/15 20:10:18 by jv               ###   ########.fr       */
+/*   Updated: 2024/04/22 23:27:02 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@
 class Sed {
     public:
 
-    Sed(const std::string& path, const std::string& s1, const std::string& s2);
+    Sed(const std::string& path,  const std::string s1,  const std::string s2);
     ~Sed();
 
     void execute(void);
 
     private:
-        std::fstream file;
-        const std::string&  from;
-        const std::string&  to;
+        std::ifstream in;
+        std::ofstream out;
+        const std::string  from;
+        const std::string  to;
     
 };
 
