@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/15 00:16:41 by jv                #+#    #+#             */
-/*   Updated: 2024/04/15 00:45:12 by jv               ###   ########.fr       */
+/*   Updated: 2024/05/04 17:38:24 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ int main(int argc, char* argv[]) {
         return 0;
     }
     
-    Sed sed = Sed(argv[1], argv[2], argv[3]);
+    Sed sed { argv[1], argv[2], argv[3] };
     sed.execute();
 }
