@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:55:19 by jv                #+#    #+#             */
-/*   Updated: 2024/05/04 12:04:04 by jv               ###   ########.fr       */
+/*   Updated: 2024/05/04 14:39:51 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ class Harl {
         void          info( void );
         void          warning( void );
         void          error( void);
-        unsigned char hash( std::string level);
 
-
-        void (Harl::* call[N])() = { nullptr, nullptr, nullptr, nullptr };
 };
 
 

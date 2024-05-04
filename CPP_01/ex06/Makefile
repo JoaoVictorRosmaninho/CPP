@@ -6,13 +6,13 @@
 #    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/05/04 10:53:17 by jv               ###   ########.fr        #
+#    Updated: 2024/05/04 15:18:08 by jv               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   		:= c++
-NAME   		:= harl
-CFLAGS 		:= -Wall -Wextra -Werror -g -I.
+NAME   		:= harlFilter
+CFLAGS 		:= -Wall -Wextra -Werror -I.
 STD    		:= -std=c++98
 SOURCE 		:= $(shell find . -type f -name '*.cpp')
 OBJECTS 	:= $(SOURCE:.cpp=.o)
@@ -33,7 +33,7 @@ $(NAME): $(OBJECTS)
 	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(STD) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm $(OBJECTS)
