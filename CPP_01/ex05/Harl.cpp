@@ -6,7 +6,7 @@
 /*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 10:55:58 by jv                #+#    #+#             */
-/*   Updated: 2024/05/04 14:25:07 by jv               ###   ########.fr       */
+/*   Updated: 2024/05/04 14:33:53 by jv               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 Harl::Harl() {
     this->call[0] = &Harl::debug;
-    this->call[1] = &Harl::warning;
-    this->call[2] = &Harl::info;
+    this->call[1] = &Harl::info;
+    this->call[2] = &Harl::warning;
     this->call[3] = &Harl::error;
 }
 
