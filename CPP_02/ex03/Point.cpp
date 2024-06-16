@@ -5,7 +5,7 @@ Point::Point( void ) : x(0), y(0) { };
 
 Point::~Point( void ) {};
 
-Point::Point( Point& point) : x(point.getX()), y(point.getY()) {};
+Point::Point( Point const& point) : x(point.getX()), y(point.getY()) {};
 
 Point::Point ( const Fixed x, const Fixed y) : x(x), y(y) {};
 

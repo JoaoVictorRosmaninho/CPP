@@ -9,7 +9,7 @@ class Point {
     public:
          Point( void );
         ~Point( void );
-         Point( Point& point);
+         Point( Point const& point);
          Point ( const Fixed x, const Fixed y);
 
          Point operator=(Point const& other);
