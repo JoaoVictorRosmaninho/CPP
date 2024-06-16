@@ -19,7 +19,7 @@ const Fixed Point::getY( void ) const {
 }
 
 Point Point::operator=(Point const& other) {
-    Point point(point);
+    Point point(other);
     
     return point;
 }
