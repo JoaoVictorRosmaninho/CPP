@@ -5,8 +5,8 @@
 int main(void)
 {
     Point a (Fixed(0), Fixed(0));
-    Point b (Fixed(10), Fixed(30));
-    Point c (Fixed(20), Fixed(0));
+    Point b (Fixed(20), Fixed(0));
+    Point c (Fixed(10), Fixed(30));
     Point p (Fixed(10), Fixed(15));
 
     std::cout << (Triangule::bsp(a, b, c,  p) == true ? "Inside" : "Outside") << std::endl;
