@@ -7,6 +7,7 @@
 
     class ClapTrap {
         public:
+             ClapTrap(unsigned int ht, unsigned int ad, unsigned int ep);
              ClapTrap();
             ~ClapTrap();
              ClapTrap(ClapTrap& other);
@@ -24,9 +25,9 @@
              unsigned int getAttackDamage( void ) const;
 
         private:
-            unsigned int hit_points    = 0;
-            unsigned int energy_points = 0;
-            unsigned int attack_damage = 0;
+            unsigned int hit_points;
+            unsigned int energy_points;
+            unsigned int attack_damage;
 
     };
 
