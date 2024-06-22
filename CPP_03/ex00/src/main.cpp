@@ -2,12 +2,10 @@
 
 int main( void ) {
 
-    ClapTrap clap; 
+    ClapTrap clap("joao"); 
 
-    // TODO
-    // Fazer operador de atribuição e de output
+    clap.attack("Pedro");
 
-
-    std::cout << "Ola Mundo !!" << std::endl;
- 
+    std::cout << "Status: " << clap << std::endl;
+    return 0;
 }

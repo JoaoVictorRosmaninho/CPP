@@ -7,28 +7,37 @@
 
     class ClapTrap {
         public:
-             ClapTrap(unsigned int ht, unsigned int ad, unsigned int ep);
-             ClapTrap();
-            ~ClapTrap();
+             ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep);
+             ClapTrap(std::string name);
+            ~ClapTrap( void );
              ClapTrap(ClapTrap& other);
-
-
 
              // functions
              void attack(const std::string& target);
-             void takeDamage(const std::string& target);
-             void beRepaired(const std::string& target);
+             void takeDamage(unsigned int amount);
+             void beRepaired(unsigned int amount);
 
              //access functions
              unsigned int getHitPoints( void ) const;
              unsigned int getEnergyPoints( void ) const;
              unsigned int getAttackDamage( void ) const;
+             std::string getName( void ) const;
+
+             //operators 
+            ClapTrap& operator=(ClapTrap& other);
+
 
         private:
+
+            ClapTrap();
+
+            std::string  name;
             unsigned int hit_points;
+            unsigned int _hit_points;
             unsigned int energy_points;
             unsigned int attack_damage;
 
+        friend std::ostream& operator<<(std::ostream& out,  ClapTrap& other);
     };
 
 #endif

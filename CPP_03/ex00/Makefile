@@ -53,11 +53,11 @@ $(DIST)/%.o: src/%.cpp $(DIST)
 	$(CC) $(CFLAGS) $(IFLAGS) $(STD) -c $< -o $@
 
 clean:
-	rm $(OBJECTS)
+	@rm -rf $(DIST)
 	@printf "$1 (YELLOW)    - Objects removed.$(RESET)\n"
 
-fclean:
-	rm $(NAME)
+fclean: clean
+	@rm -f $(NAME)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: fclean all
