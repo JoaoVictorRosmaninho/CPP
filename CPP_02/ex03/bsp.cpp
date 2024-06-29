@@ -15,10 +15,5 @@ bool Triangule::bsp(Point const& a, Point const& b, Point const& c, Point const&
     Fixed pbc = area(point, b, c);
     Fixed pac = area(point, a, b);
 
-    std::cout << "pab: " << pab << std::endl;
-    std::cout << "pbc: " << pbc << std::endl;
-    std::cout << "pac: " << pac << std::endl;
-
-
     return ((pab + pbc + pac) == abc);
 }

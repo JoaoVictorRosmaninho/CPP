@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
+#    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/06/06 22:30:00 by jv               ###   ########.fr        #
+#    Updated: 2024/06/29 18:01:42 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,11 +36,11 @@ $(NAME): $(OBJECTS)
 	$(CC) $(CFLAGS) $(STD) -c $< -o $@
 
 clean:
-	rm $(OBJECTS)
+	@rm -rf $(OBJECTS)
 	@printf "$(YELLOW)    - Objects removed.$(RESET)\n"
 
 fclean: clean
-	rm $(NAME)
+	@rm -rf $(NAME)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: fclean all
