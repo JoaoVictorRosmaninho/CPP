@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:41 by joao              #+#    #+#             */
-/*   Updated: 2024/06/23 22:33:23 by joao             ###   ########.fr       */
+/*   Updated: 2024/06/29 17:45:02 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
              //operators 
             ClapTrap& operator=(ClapTrap& other);
             
-            friend std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
+             std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
 
         protected:
 
