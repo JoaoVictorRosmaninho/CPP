@@ -50,7 +50,7 @@ class Fixed {
 
         float round(float n);
     
-    friend std::ostream& operator<<( std::ostream& o,  const Fixed& f );
+     std::ostream& operator<<( std::ostream& o,  const Fixed& f );
 };
     
 
