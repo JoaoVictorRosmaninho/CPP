@@ -13,7 +13,6 @@
         
         void highFivesGuys(void);
         
-    protected:
         std::string toString( void ) const ;
     private:
          FlagTrap( void );

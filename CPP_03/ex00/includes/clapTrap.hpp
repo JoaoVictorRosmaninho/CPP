@@ -37,7 +37,7 @@
             unsigned int energy_points;
             unsigned int attack_damage;
 
-         std::ostream& operator<<(std::ostream& out,  ClapTrap& other);
     };
 
+    std::ostream& operator<<(std::ostream& out,  ClapTrap& other);
 #endif

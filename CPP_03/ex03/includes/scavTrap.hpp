@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:30 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 15:43:58 by joao             ###   ########.fr       */
+/*   Updated: 2024/06/29 18:26:34 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@
         void attack(const std::string& target);
         void guardGate( void ) const;
 
-
-   protected:
         std::string toString( void ) const ;
+
     private:
          ScavTrap( void );
 

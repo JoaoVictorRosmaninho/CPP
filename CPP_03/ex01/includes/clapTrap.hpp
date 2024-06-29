@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:41 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 17:45:02 by joao             ###   ########.fr       */
+/*   Updated: 2024/06/29 18:24:54 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@
         public:
              ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep);
              ClapTrap(std::string name);
-            ~ClapTrap( void );
              ClapTrap(ClapTrap& other);
+             ClapTrap( void );
+            ~ClapTrap( void );
 
              // functions
-             virtual void attack(const std::string& target);
+             void attack(const std::string& target);
              void takeDamage(unsigned int amount);
              void beRepaired(unsigned int amount);
 
@@ -36,26 +37,22 @@
              std::string getName( void ) const;
 
              //operators 
-            ClapTrap& operator=(ClapTrap& other);
+             ClapTrap& operator=(ClapTrap& other);
             
-             std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
+            virtual std::string toString( void ) const ;
+        
 
         protected:
 
-            ClapTrap();
-
+            
             std::string  name;
             unsigned int hit_points;
             unsigned int _hit_points;
             unsigned int energy_points;
             unsigned int attack_damage;
 
-            virtual std::string toString( void ) const ;
-        private:
-        
-
-
-        
     };
+    
+    std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
 
 #endif

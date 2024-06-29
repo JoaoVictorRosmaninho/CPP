@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:41 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 17:45:02 by joao             ###   ########.fr       */
+/*   Updated: 2024/06/29 18:25:40 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@
              //operators 
             ClapTrap& operator=(ClapTrap& other);
             
-             std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
+            virtual std::string toString( void ) const ;
 
         protected:
 
@@ -50,12 +50,12 @@
             unsigned int energy_points;
             unsigned int attack_damage;
 
-            virtual std::string toString( void ) const ;
         private:
         
 
 
         
     };
-
+    
+    std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
 #endif
