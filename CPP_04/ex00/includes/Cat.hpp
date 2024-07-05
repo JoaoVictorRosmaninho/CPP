@@ -8,9 +8,12 @@
         public:
              Cat( void );
              Cat( Cat& other);
+             Cat( std::string type);
             ~Cat( void );
 
-            Cat& operator=(const Cat& other);
+            Cat operator=(const Cat& other);
+
+            void makeSound( void );
     };
 
 #endif

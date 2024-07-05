@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jv <jv@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 23:24:30 by jv                #+#    #+#             */
-/*   Updated: 2024/07/03 23:38:32 by jv               ###   ########.fr       */
+/*   Updated: 2024/07/04 23:45:04 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,24 @@ Animal::~Animal( void ) {
     std::cout << "Animal: Default Destructor Called!" << std::endl;
 }
 
-Animal::Animal( Animal& other) : Animal(other) { };
+Animal::Animal( Animal& other) : type(other.getType()) { 
+    std::cout << "Animal: Copy Constructor Called!" << std::endl;
+};
+
+Animal::Animal( const Animal& other) : type(other.getType()) { 
+    std::cout << "Animal: Copy Constructor Called!" << std::endl;
+};
+
+Animal Animal::operator=(const Animal& other) {
+    Animal animal ( other );
+
+    return animal;
+}
+
+std::string Animal::getType( void ) const {
+    return this->type;
+}
+
+void Animal::makeSound( void ) {
+    std::cout << "Animal: MakeSound Called!" << std::endl;
+}

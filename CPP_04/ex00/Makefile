@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jv <jv@student.42.fr>                      +#+  +:+       +#+         #
+#    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/05/25 17:09:03 by jv               ###   ########.fr        #
+#    Updated: 2024/07/04 23:31:32 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= c++
-NAME   	:= clapTrap
+NAME   	:= Animal
 CFLAGS 	:= -Wall -Wextra -Werror
 IFLAGS  := -I./includes
 STD    	:= -std=c++98
