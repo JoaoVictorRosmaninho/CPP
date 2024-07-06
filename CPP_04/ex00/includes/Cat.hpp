@@ -11,7 +11,7 @@
              Cat( std::string type);
             ~Cat( void );
 
-            Cat operator=(const Cat& other);
+            Animal& operator=(const Animal& other);
 
             void makeSound( void );
     };

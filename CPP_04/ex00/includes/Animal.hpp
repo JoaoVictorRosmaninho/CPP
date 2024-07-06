@@ -12,7 +12,7 @@
              Animal( const Animal& other);
             ~Animal( void );
 
-            virtual Animal operator=(const Animal& other);
+            virtual Animal& operator=(const Animal& other);
 
 
             virtual void makeSound( void );
