@@ -8,12 +8,13 @@
         public:
              Dog( void );
              Dog( Dog& other );
-             Dog( std::string type);
+             Dog( std::string const& type);
             ~Dog( void );
 
             Animal& operator=(const Animal& other);
 
-            void makeSound( void );
+            void makeSound( void ) const ;
+
     };
 
 #endif

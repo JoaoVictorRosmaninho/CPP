@@ -6,16 +6,16 @@
 
     class Animal {
         public:
-             Animal( void );
-             Animal( std::string type );
-             Animal( Animal& other);
-             Animal( const Animal& other);
-            ~Animal( void );
+              Animal( void );
+              Animal( Animal& other);
+              Animal( const Animal& other);
+              Animal( std::string const& type );
 
             virtual Animal& operator=(const Animal& other);
+            virtual ~Animal( void );
 
 
-            virtual void makeSound( void );
+            virtual void makeSound( void ) const;
 
             std::string getType( void ) const;
         

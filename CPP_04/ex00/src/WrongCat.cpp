@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,30 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
 
-Cat::Cat( void ) : Animal("Cat") {
-    std::cout << "Cat: Default Constructor Called!" << std::endl;
+WrongCat::WrongCat( void ) : WrongAnimal("WrongCat") {
+    std::cout << "WrongCat: Default Constructor Called!" << std::endl;
 }
 
-Cat::Cat( std::string const& type ) : Animal(type) {
-    std::cout << "Cat: Constructor Called!" << std::endl;
+WrongCat::WrongCat( std::string const& type ) : WrongAnimal(type) {
+    std::cout << "WrongCat: Constructor Called!" << std::endl;
 }
 
-Cat::~Cat( void ) {
-    std::cout << "Cat: Default Destructor Called!" << std::endl;
+WrongCat::~WrongCat( void ) {
+    std::cout << "WrongCat: Default Destructor Called!" << std::endl;
 }
 
-Cat::Cat( Cat& other) : Animal(other) { 
-    std::cout << "Cat: Copy Constructor Called!" << std::endl;
+WrongCat::WrongCat( WrongCat& other) : WrongAnimal(other) { 
+    std::cout << "WrongCat: Copy Constructor Called!" << std::endl;
 };
 
-Animal& Cat::operator=(const Animal& other) {
-    std::cout << "Cat: Attribution Operator Called!" << std::endl;
-    return Animal::operator=(other);
-}
-
-void Cat::makeSound( void ) const {
-    std::cout << "Cat: Meowwwww" << std::endl;
-}
+//void WrongCat::makeSound( void ) const {
+//    std::cout << "WrongCat: Meowwwww" << std::endl;
+//}
