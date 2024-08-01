@@ -42,9 +42,7 @@ Fixed& Fixed::operator=(const Fixed& other) {
 
 Fixed Fixed::operator++(const int) {
     Fixed tmp ( *this );
-    
     operator++();
-
     return tmp;
 }
 
