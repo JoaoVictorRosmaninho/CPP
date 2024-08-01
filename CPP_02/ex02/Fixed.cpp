@@ -42,7 +42,9 @@ Fixed& Fixed::operator=(const Fixed& other) {
 
 Fixed Fixed::operator++(const int) {
     Fixed tmp ( *this );
-    tmp.setRawBits(this->_number + 1);
+    
+    operator++();
+
     return tmp;
 }
 
@@ -54,13 +56,12 @@ Fixed& Fixed::operator++( void ) {
 
 Fixed Fixed::operator--(const int) {
     Fixed tmp ( *this );
-    tmp.setRawBits(this->_number - 1);
+    operator--();
     return tmp;
 }
 
 Fixed& Fixed::operator--( void ) {
     --this->_number;
-
     return *this;
 }
 
