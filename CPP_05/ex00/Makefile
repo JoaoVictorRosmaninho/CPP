@@ -6,12 +6,12 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/07/18 20:25:06 by joao             ###   ########.fr        #
+#    Updated: 2024/08/05 23:52:30 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= c++
-NAME   	:= Recap
+NAME   	:= Bureaucrat
 CFLAGS 	:= -Wall -Wextra -Werror -g
 IFLAGS  := -I./includes
 STD    	:= -std=c++98
