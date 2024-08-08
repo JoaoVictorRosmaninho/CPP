@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:13 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 17:45:10 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/08 20:59:31 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 
 int main( void ) {
 
-    ScavTrap clap("joao"); 
+    ScavTrap scav("joao"); 
 
-    clap.attack("Pedro");
+    scav.attack("Pedro");
 
-    std::cout << "Status: " << clap << std::endl;
+    scav.guardGate();
+    
     return 0;
 }
