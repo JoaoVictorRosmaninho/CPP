@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:41 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 18:26:19 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/08 22:19:05 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
              ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep);
              ClapTrap(std::string name);
             ~ClapTrap( void );
-             ClapTrap(ClapTrap& other);
+             ClapTrap(const ClapTrap& other);
 
              // functions
              virtual void attack(const std::string& target);

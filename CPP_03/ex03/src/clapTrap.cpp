@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:09 by joao              #+#    #+#             */
-/*   Updated: 2024/06/23 23:21:17 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/08 22:19:11 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap::ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep) : name(name), hit_points(ht), _hit_points(ht), energy_points(ep), attack_damage(ad) { 
-    std::cout << "Constructor for " << name << " has called" << std::endl;
+    std::cout << "Special Constructor for " << name << " has called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), _hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), _hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
     std::cout << "Constructor for " << name << " has called" << std::endl;
  }
 

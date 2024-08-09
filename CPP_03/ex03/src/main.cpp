@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:13 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 16:39:11 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/08 22:12:00 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,15 @@ int main( void ) {
     std::cout << std::endl; 
     std::cout << "Status: " << dt << std::endl;
     std::cout << std::endl; 
+
+    std::cout << std::endl; 
+    std::cout << "Attack: " << std::endl;
+
+
+    dt.attack("TESTE");
+
+    std::cout << std::endl; 
+
 
     dt.whoAmI();
 

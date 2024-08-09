@@ -6,8 +6,10 @@
  class FlagTrap : virtual public ClapTrap {
 
     public:
+         FlagTrap( void );
          FlagTrap(std::string name);
          FlagTrap(FlagTrap& other);
+         FlagTrap(const FlagTrap& other);
         
         ~FlagTrap( void );
         
@@ -15,7 +17,6 @@
         
         std::string toString( void ) const ;
     private:
-         FlagTrap( void );
 
  };
 
