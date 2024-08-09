@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/27 22:23:54 by joao              #+#    #+#             */
-/*   Updated: 2024/06/27 23:15:04 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/08 21:03:36 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void FlagTrap::highFivesGuys(void) {
 }
 
 std::string FlagTrap::toString( void ) const {
-    return ClapTrap::toString() + "From  FlagTrap!!!";
+    return ClapTrap::toString() + " From  FlagTrap!!!";
 }
