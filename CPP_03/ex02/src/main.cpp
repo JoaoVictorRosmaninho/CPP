@@ -6,16 +6,16 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:13 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 14:44:57 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/13 08:43:59 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "clapTrap.hpp"
-#include "flagTrap.hpp"
+#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void ) {
 
-    FlagTrap ft ( "PlayerOne" );
+    FragTrap ft ( "PlayerOne" );
 
     std::cout << std::endl; 
     std::cout << "Status: " << ft << std::endl;

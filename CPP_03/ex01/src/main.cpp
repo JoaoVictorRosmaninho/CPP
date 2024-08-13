@@ -6,12 +6,12 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:13 by joao              #+#    #+#             */
-/*   Updated: 2024/08/08 20:59:31 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/13 08:37:15 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "clapTrap.hpp"
-#include "scavTrap.hpp"
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main( void ) {
 

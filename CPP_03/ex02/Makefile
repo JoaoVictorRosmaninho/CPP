@@ -6,19 +6,19 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/06/27 22:34:02 by joao             ###   ########.fr        #
+#    Updated: 2024/08/13 08:40:58 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= c++
-NAME   	:= fragTrap
+NAME   	:= FragTrap
 CFLAGS 	:= -Wall -Wextra -Werror
 IFLAGS  := -I./includes
 STD    	:= -std=c++98
-SOURCES := $(shell find . -type f -name '*.cpp')
+SOURCES := $(wildcard src/*.cpp)
 DIST	:= obj
-OBJECTS := $(addprefix $(DIST)/, $(notdir $(SOURCES:.cpp=.o)))
-DIRS    := $(dir $(SOURCES))
+OBJECTS := $(addprefix $(DIST)/, $(SOURCES:.cpp=.o))
+DIRS    := $(dir $(OBJECTS))
 
 
 GREEN	:=	\e[92;5;118m
@@ -38,26 +38,25 @@ all: $(NAME)
 
 
 debug:
-	@echo $(OBJECTS)
+	@echo $(DIRS)
 
-$(NAME): $(OBJECTS) 
+$(NAME): $(DIST) $(OBJECTS)
 	@printf "$(CURSIVE)$(GRAY) 	- Compiling $(NAME)... $(RESET)\n"
 	$(CC) $(STD) $(OBJECTS) -o $(NAME)
 	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
-
-$(DIST):
-	@mkdir -p $@
-
-$(DIST)/%.o: src/%.cpp $(DIST)
+$(DIST)/%.o: %.cpp
 	$(CC) $(CFLAGS) $(IFLAGS) $(STD) -c $< -o $@
 
+$(DIST):
+	@mkdir -p $(DIRS)
 clean:
-	@rm -rf $(DIST)
+	@rm -rf $(OBJECTS)
 	@printf "$1 (YELLOW)    - Objects removed.$(RESET)\n"
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f   $(NAME)
+	@rm -rf  $(DIST)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: fclean all

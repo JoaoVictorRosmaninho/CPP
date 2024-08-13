@@ -6,19 +6,25 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:24 by joao              #+#    #+#             */
-/*   Updated: 2024/08/13 07:45:46 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/13 08:37:15 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scavTrap.hpp"
+#include "ScavTrap.hpp"
 
 
-ScavTrap::ScavTrap( void ) : ClapTrap("", 100, 20, 50) {  
-    
+ScavTrap::ScavTrap( void ) : ClapTrap() {
+    this->hit_points    = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 20, 50) {
+ScavTrap::ScavTrap(std::string name) : ClapTrap(name) {
     std::cout << "Constructor for " << name << " has called from ScavTrap" << std::endl;
+
+    this->hit_points    = 100;
+	this->energy_points = 50;
+	this->attack_damage = 20;
 }
 
 ScavTrap::~ScavTrap( void ) {
@@ -41,7 +47,7 @@ void ScavTrap::attack(const std::string& target) {
 
 
 void ScavTrap::guardGate( void ) const  {
-    std::cout << "ScavTrap is now in Gate keeper mode" << std::endl;
+    std::cout << "| ScavTrap | - is now in Gate keeper mode" << std::endl;
 }
 
 std::string ScavTrap::toString( void ) const {    

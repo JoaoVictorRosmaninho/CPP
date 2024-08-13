@@ -6,11 +6,11 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:13 by joao              #+#    #+#             */
-/*   Updated: 2024/08/08 22:12:00 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/13 08:37:47 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "diamondTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main( void ) {
 

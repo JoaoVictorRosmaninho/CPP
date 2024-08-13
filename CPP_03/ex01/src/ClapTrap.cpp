@@ -1,4 +1,4 @@
-#include "clapTrap.hpp"
+#include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)  {
 
