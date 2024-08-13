@@ -1,14 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   clapTrap.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/21 22:08:41 by joao              #+#    #+#             */
-/*   Updated: 2024/06/29 18:24:54 by joao             ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #ifndef CLAPTRAP_H
     #define CLAPTRAP_H
@@ -21,8 +10,9 @@
         public:
              ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep);
              ClapTrap(std::string name);
+             ClapTrap();
              ClapTrap(ClapTrap& other);
-             ClapTrap( void );
+            
             ~ClapTrap( void );
 
              // functions
@@ -34,25 +24,21 @@
              unsigned int getHitPoints( void ) const;
              unsigned int getEnergyPoints( void ) const;
              unsigned int getAttackDamage( void ) const;
+
              std::string getName( void ) const;
+             std::string toString( void ) const;
 
              //operators 
-             ClapTrap& operator=(ClapTrap& other);
-            
-            virtual std::string toString( void ) const ;
-        
+            ClapTrap& operator=(ClapTrap& other);
+
 
         protected:
-
-            
             std::string  name;
             unsigned int hit_points;
-            unsigned int _hit_points;
             unsigned int energy_points;
             unsigned int attack_damage;
 
     };
-    
-    std::ostream& operator<<(std::ostream& out,  const ClapTrap& other);
 
+    std::ostream& operator<<(std::ostream& out,  ClapTrap& other);
 #endif

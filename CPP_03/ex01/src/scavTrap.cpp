@@ -6,14 +6,16 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/21 22:08:24 by joao              #+#    #+#             */
-/*   Updated: 2024/06/23 23:21:56 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/13 07:45:46 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "scavTrap.hpp"
 
 
-ScavTrap::ScavTrap( void ) : ClapTrap() { }
+ScavTrap::ScavTrap( void ) : ClapTrap("", 100, 20, 50) {  
+    
+}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 20, 50) {
     std::cout << "Constructor for " << name << " has called from ScavTrap" << std::endl;
