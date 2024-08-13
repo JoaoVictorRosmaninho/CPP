@@ -6,7 +6,7 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/08/13 00:37:08 by joao             ###   ########.fr        #
+#    Updated: 2024/08/13 07:37:27 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ $(DIST)/%.o: %.cpp
 $(DIST):
 	@mkdir -p $(DIRS)
 clean:
-	@rm -rf $(DIST)
+	@rm -rf $(OBJECTS)
 	@printf "$1 (YELLOW)    - Objects removed.$(RESET)\n"
 
 fclean: clean
