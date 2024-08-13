@@ -6,12 +6,12 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/08/13 07:37:27 by joao             ###   ########.fr        #
+#    Updated: 2024/08/13 08:59:56 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	:= c++
-NAME   	:= clapTrap
+NAME   	:= ClapTrap
 CFLAGS 	:= -Wall -Wextra -Werror
 IFLAGS  := -I./includes
 STD    	:= -std=c++98

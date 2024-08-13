@@ -16,7 +16,7 @@ ClapTrap::ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned 
     std::cout << "Constructor for " << name << " has called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
     std::cout << "Constructor for " << name << " has called" << std::endl;
  }
 

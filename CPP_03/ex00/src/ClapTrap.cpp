@@ -1,6 +1,5 @@
 #include "ClapTrap.hpp"
 
-
 ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)  {
 
 }
@@ -14,11 +13,11 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 ClapTrap::ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep) : name(name), hit_points(ht), energy_points(ep), attack_damage(ad) { 
-    std::cout << "Constructor for " << name << "has called" << std::endl;
+    std::cout << "Constructor for " << name << " has called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
-    std::cout << "Constructor for " << name << "has called" << std::endl;
+ClapTrap::ClapTrap(const ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
+    std::cout << "Constructor for " << name << " has called" << std::endl;
  }
 
 
@@ -77,4 +76,15 @@ void ClapTrap::beRepaired(unsigned int amount) {
    energy_points -= 1;
    hit_points    += amount;
    std::cout << "ClapTrap " <<  name <<  "get " << amount << "points of repair!"  << std::endl << std::flush;
+}
+
+std::string ClapTrap::toString( void ) const {
+    std::stringstream out;
+
+    out << name
+        << "#energy_poits:" << energy_points
+        << "#attack_damage:" << attack_damage
+        << "#hit_points:" << hit_points;
+
+    return out.str();
 }

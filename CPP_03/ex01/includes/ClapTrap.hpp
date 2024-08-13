@@ -11,7 +11,7 @@
              ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep);
              ClapTrap(std::string name);
              ClapTrap();
-             ClapTrap(ClapTrap& other);
+             ClapTrap(const ClapTrap& other);
             
             ~ClapTrap( void );
 
