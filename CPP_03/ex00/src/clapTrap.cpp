@@ -1,6 +1,11 @@
 #include "clapTrap.hpp"
 
-ClapTrap::ClapTrap(std::string name) : name(name), hit_points(10), _hit_points(10), energy_points(10), attack_damage(0) {
+
+ClapTrap::ClapTrap( void ) : hit_points(10), energy_points(10), attack_damage(0)  {
+
+}
+
+ClapTrap::ClapTrap(std::string name) : name(name), hit_points(10), energy_points(10), attack_damage(0) {
     std::cout << "Constructor for " << name << " has called" << std::endl;
 }
 
@@ -8,11 +13,11 @@ ClapTrap::~ClapTrap( void ) {
     std::cout << "Destructor for " << name << " has called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep) : name(name), hit_points(ht), _hit_points(ht), energy_points(ep), attack_damage(ad) { 
+ClapTrap::ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep) : name(name), hit_points(ht), energy_points(ep), attack_damage(ad) { 
     std::cout << "Constructor for " << name << "has called" << std::endl;
 }
 
-ClapTrap::ClapTrap(ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), _hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
+ClapTrap::ClapTrap(ClapTrap& other) : name(other.getName()), hit_points(other.getHitPoints()), energy_points(other.getEnergyPoints()), attack_damage(other.getAttackDamage()) { 
     std::cout << "Constructor for " << name << "has called" << std::endl;
  }
 
@@ -70,6 +75,6 @@ void ClapTrap::beRepaired(unsigned int amount) {
         return ;
     }  
    energy_points -= 1;
-   hit_points     = _hit_points;
+   hit_points    += amount;
    std::cout << "ClapTrap " <<  name <<  "get " << amount << "points of repair!"  << std::endl << std::flush;
 }

@@ -9,8 +9,10 @@
         public:
              ClapTrap(std::string name, unsigned int ht, unsigned int ad, unsigned int ep);
              ClapTrap(std::string name);
-            ~ClapTrap( void );
+             ClapTrap();
              ClapTrap(ClapTrap& other);
+            
+            ~ClapTrap( void );
 
              // functions
              void attack(const std::string& target);
@@ -29,11 +31,9 @@
 
         private:
 
-            ClapTrap();
 
             std::string  name;
             unsigned int hit_points;
-            unsigned int _hit_points;
             unsigned int energy_points;
             unsigned int attack_damage;
 
