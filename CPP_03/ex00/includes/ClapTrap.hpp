@@ -32,7 +32,7 @@
             ClapTrap& operator=(ClapTrap& other);
 
 
-        protected:
+        private:
             std::string  name;
             unsigned int hit_points;
             unsigned int energy_points;
