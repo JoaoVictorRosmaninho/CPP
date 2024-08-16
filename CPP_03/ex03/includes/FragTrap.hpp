@@ -16,8 +16,6 @@
         void highFivesGuys(void);
         
         std::string toString( void ) const ;
-    private:
-
  };
 
 #endif
