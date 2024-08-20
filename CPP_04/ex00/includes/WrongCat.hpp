@@ -12,7 +12,7 @@
              WrongCat( std::string const& type);
 
 
-           // void makeSound( void ) const;
+            void makeSound( void ) const;
     };
 
 #endif

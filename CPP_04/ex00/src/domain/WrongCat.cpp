@@ -29,6 +29,6 @@ WrongCat::WrongCat( WrongCat& other) : WrongAnimal(other) {
     std::cout << "WrongCat: Copy Constructor Called!" << std::endl;
 };
 
-//void WrongCat::makeSound( void ) const {
-//    std::cout << "WrongCat: Meowwwww" << std::endl;
-//}
+void WrongCat::makeSound( void ) const {
+    std::cout << "WrongCat: Meowwwww" << std::endl;
+}
