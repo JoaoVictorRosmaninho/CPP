@@ -6,7 +6,7 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/08/19 23:10:16 by joao             ###   ########.fr        #
+#    Updated: 2024/08/19 23:14:19 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,10 @@ NAME   	:= Animal
 CFLAGS 	:= -Wall -Wextra -Werror
 IFLAGS  := -I./includes
 STD    	:= -std=c++98
-SOURCES := $(wildcard src/*.cpp)
 DIST	:= obj
+
+SOURCES := $(wildcard src/*.cpp)
+SOURCES += $(wildcard src/domain/*.cpp)
 OBJECTS := $(addprefix $(DIST)/, $(SOURCES:.cpp=.o))
 DIRS    := $(dir $(OBJECTS))
 
