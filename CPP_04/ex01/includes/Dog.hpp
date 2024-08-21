@@ -12,7 +12,7 @@
              Dog( std::string const& type);
             ~Dog( void );
 
-            Animal& operator=(Animal const& other);
+            Dog& operator=(Dog const& other);
 
             void   makeSound( void ) const;
             Brain* getBrain ( void ) const;

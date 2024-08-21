@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 23:24:30 by jv                #+#    #+#             */
-/*   Updated: 2024/07/13 15:37:17 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:02:46 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,15 @@ Dog::Dog( Dog& other) : Animal(other), brain(other.getBrain()) {
     std::cout << "Dog: Copy Constructor Called!" << std::endl;
 };
 
-Animal& Dog::operator=(Animal const& other) {
+Dog& Dog::operator=(Dog const& other) {
+    
+    if (this == &other) return *this; 
+    
     std::cout << "Dog: Attribution Operator Called!" << std::endl;
     
     delete this->brain;
 
-    this->brain = new Brain(dynamic_cast<Dog const&>(other).getBrain());
+    this->brain = new Brain(other.brain);
 
     return *this;
 }

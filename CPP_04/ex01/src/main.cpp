@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 23:31:59 by joao              #+#    #+#             */
-/*   Updated: 2024/07/13 16:19:19 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:16:57 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,21 @@ int main(void) {
     for (int i = 0; i < TOTAL / 2; i++) {
         std::cout << "-------------" << i << "-------------" << std::endl;
         delete animals[i];
+    }
+
+    {
+        std::cout << "-------" << " 42DeepCopy Test " << "-------" << std::endl;
+        Dog basic;
+        {
+            Dog tmp = basic;
+            Dog another(tmp);
+
+            std::cout << "expect brain from basic be different from brain from tmp: " << (basic.getBrain() != tmp.getBrain()) << std::endl;
+
+            std::cout << "expect brain from another be different from brain from tmp: " << (another.getBrain() != tmp.getBrain()) << std::endl;   
+
+        }
+        std::cout << std::endl;
     }
 
     delete[] animals;

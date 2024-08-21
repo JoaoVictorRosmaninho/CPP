@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/13 13:31:22 by joao              #+#    #+#             */
-/*   Updated: 2024/07/13 16:01:27 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 21:55:14 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Brain::Brain( void ) {
 }
 
 Brain::Brain( Brain const& other ) : ideas(other.getIdeas()) { 
-    
+    std::cout << "Brain: Constructor Called!" << std::endl;
 }
 
 Brain::Brain( Brain* other) {
@@ -34,7 +34,10 @@ Brain::Brain( Brain* other) {
 }
 
 Brain::~Brain( void ) {
-   delete[] this->ideas; 
+   delete[] this->ideas;
+
+   std::cout << "Brain: Destructor  Called!" << std::endl;
+
 }
 
 Brain& Brain::operator=(Brain const& other) {

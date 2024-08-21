@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 23:24:30 by jv                #+#    #+#             */
-/*   Updated: 2024/07/13 15:37:15 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:21:44 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ Cat::Cat( Cat& other) : Animal(other) {
     std::cout << "Cat: Copy Constructor Called!" << std::endl;
 };
 
-Animal& Cat::operator=(const Animal& other) {
+Cat& Cat::operator=(const Cat& other) {
     std::cout << "Cat: Attribution Operator Called!" << std::endl;
 
     delete this->brain;

@@ -6,7 +6,7 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/08/19 23:14:19 by joao             ###   ########.fr        #
+#    Updated: 2024/08/20 22:19:03 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,9 @@ $(DIST):
 clean:
 	@rm -rf $(OBJECTS)
 	@printf "$1 (YELLOW)    - Objects removed.$(RESET)\n"
+
+valgrind:
+	valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./$(NAME)
 
 fclean: clean
 	@rm -f   $(NAME)

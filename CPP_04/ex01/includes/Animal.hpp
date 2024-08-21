@@ -7,12 +7,12 @@
 
     class Animal {
         public:
-              Animal( void );
-              Animal( Animal& other);
-              Animal( const Animal& other);
-              Animal( std::string const& type );
-
-            virtual Animal& operator=(const Animal& other);
+            Animal( void );
+            Animal( Animal& other);
+            Animal( const Animal& other);
+            Animal( std::string const& type );
+            Animal& operator=(const Animal& other);
+            
             virtual ~Animal( void );
 
 
