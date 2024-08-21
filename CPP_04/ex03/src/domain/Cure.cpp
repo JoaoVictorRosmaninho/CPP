@@ -37,6 +37,9 @@ Cure* Cure::clone( void ) const {
 }
 
 Cure const& Cure::operator=(AMateria const& other) {
-    
-    return (*this = other);
+    if (this == &other) return *this;
+
+    *this = other;
+
+    return *this;
 }

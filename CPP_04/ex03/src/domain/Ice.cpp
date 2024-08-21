@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 21:20:34 by joao              #+#    #+#             */
-/*   Updated: 2024/07/27 14:16:38 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:55:02 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,9 @@ Ice* Ice::clone( void ) const {
 }
 
 Ice const& Ice::operator=(AMateria const& other) {
-    
-    return (*this = other);
+    if (this == &other) return *this;
+
+    *this = other;
+
+    return *this;
 }
