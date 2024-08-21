@@ -6,14 +6,16 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/21 11:09:29 by joao              #+#    #+#             */
-/*   Updated: 2024/07/27 12:26:40 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:48:25 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character( Character const& other) : name(other.getName()), used_slots(0) {
-
+   for (unsigned char i = 0; i < TOTAL_MATERIAS; i++) {
+        this->slots[i] = other.slots[i]->clone(); 
+    }
 }
 
 Character::Character( std::string const& name) : name(name), used_slots(0) {
@@ -56,10 +58,10 @@ AMateria* Character::getSlots( void ) const {
 // Ver como outras pessoas fizeram
 Character const& Character::operator=(Character const& other) {
     
-    AMateria* other_slots = other.getSlots();
+    if (this == &other) return *this;
 
     for (unsigned char i = 0; i < TOTAL_MATERIAS; i++) {
-        this->slots[i] = other_slots[i].clone(); // unsafe
+        this->slots[i] =  other.slots[i]->clone(); 
     }
 
     return *this;
