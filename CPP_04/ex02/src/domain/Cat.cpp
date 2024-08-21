@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 23:24:30 by jv                #+#    #+#             */
-/*   Updated: 2024/07/16 22:39:34 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:29:53 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ std::string Cat::getType( void ) const {
 }
 
 Cat& Cat::operator=(const Animal& other) {
+    
+    if (this == &other) return *this;
+
     std::cout << "Cat: Attribution Operator Called!" << std::endl;
 
     delete this->brain;

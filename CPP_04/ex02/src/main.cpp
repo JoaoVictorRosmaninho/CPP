@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 23:31:59 by joao              #+#    #+#             */
-/*   Updated: 2024/07/16 22:41:15 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 22:32:08 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@
 #define TOTAL 20
 
 
+
 int main(void) {
+    
+    // Animal tmp;
+
     Animal** animals = new Animal*[TOTAL];
 
     for (int i = 0; i < TOTAL / 2; i++) {
