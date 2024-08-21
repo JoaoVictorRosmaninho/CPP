@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 23:31:59 by joao              #+#    #+#             */
-/*   Updated: 2024/07/13 13:06:17 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/20 21:48:46 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main(void)
     std::cout << std::endl << "------------- Wrong Animal -------------" << std::endl;
 
     const WrongAnimal* wmeta = new WrongAnimal();
-    const WrongCat*    wi    = new WrongCat();
+    const WrongAnimal* wi    = new WrongCat();
     std::cout << "Type: " << wi->getType() << " " << std::endl;
     wmeta->makeSound();
     wi->makeSound();
