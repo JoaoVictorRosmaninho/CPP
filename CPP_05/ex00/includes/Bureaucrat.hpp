@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:34:34 by joao              #+#    #+#             */
-/*   Updated: 2024/08/05 23:51:07 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/21 22:31:56 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,13 @@
     class Bureaucrat {
         public:
              Bureaucrat( const std::string& name, unsigned char grade );
+             Bureaucrat( const Bureaucrat& other );
+             Bureaucrat( void );
+
             ~Bureaucrat( void );
+
+            void increment( void );
+            void decrement( void );
 
             const Bureaucrat&  operator=(const Bureaucrat& other);
 
@@ -44,7 +50,6 @@
              };
             
         private:
-            Bureaucrat( void );
 
             unsigned char grade;
             const std::string& name;    
