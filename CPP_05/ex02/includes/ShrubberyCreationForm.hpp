@@ -6,9 +6,12 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 10:32:57 by joao              #+#    #+#             */
-/*   Updated: 2024/08/24 15:41:08 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/24 17:14:39 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef SHRUBBERYCREATIONFORM
+#define SHRUBBERYCREATIONFORM
 
 #include <fstream>
 
@@ -20,6 +23,7 @@ class Bureaucrat;
 class ShrubberyCreationForm : public AForm {
     public:
         ShrubberyCreationForm( void );
+        ShrubberyCreationForm( std::string name );
         ShrubberyCreationForm( const ShrubberyCreationForm& other);
 
         virtual ~ShrubberyCreationForm( void );
@@ -30,3 +34,5 @@ class ShrubberyCreationForm : public AForm {
 
         void                                 executeForm(void);         
 };
+
+#endif

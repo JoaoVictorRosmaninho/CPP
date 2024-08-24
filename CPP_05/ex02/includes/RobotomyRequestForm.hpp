@@ -10,18 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-#include <cstdlib> 
-#include <ctime>
+# include <cstdlib> 
+# include <ctime>
 
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
+# include "AForm.hpp"
+# include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
 class RobotomyRequestForm : public AForm {
     public:
         RobotomyRequestForm( void );
+        RobotomyRequestForm( std::string name );
         RobotomyRequestForm( const RobotomyRequestForm& other);
 
         virtual ~RobotomyRequestForm( void );
@@ -32,3 +35,5 @@ class RobotomyRequestForm : public AForm {
 
         void                                 executeForm(void);         
 };
+
+#endif

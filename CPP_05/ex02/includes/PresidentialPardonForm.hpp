@@ -11,6 +11,9 @@
 /* ************************************************************************** */
 
 
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
+
 #include <cstdlib> 
 
 #include "AForm.hpp"
@@ -21,6 +24,7 @@ class Bureaucrat;
 class PresidentialPardonForm : public AForm {
     public:
         PresidentialPardonForm( void );
+        PresidentialPardonForm( std::string name );
         PresidentialPardonForm( const PresidentialPardonForm& other);
 
         virtual ~PresidentialPardonForm( void );
@@ -31,3 +35,5 @@ class PresidentialPardonForm : public AForm {
 
         void                                 executeForm(void);         
 };
+
+#endif
