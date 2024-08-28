@@ -6,17 +6,20 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 10:36:52 by joao              #+#    #+#             */
-/*   Updated: 2024/08/24 14:49:16 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 23:25:31 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) 
-                                            : AForm(other) { }
+                                            : AForm(other),
+                                              _target(other._target) { }
 
-ShrubberyCreationForm::ShrubberyCreationForm(void)
-                                            : AForm("ShrubberyCreationForm", false, 145, 137) { }
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
+                                            : AForm("ShrubberyCreationForm", false, 145, 137),
+                                              _target(target) { }
 
 
 ShrubberyCreationForm::~ShrubberyCreationForm( void ) { }
@@ -25,16 +28,16 @@ std::string ShrubberyCreationForm::toString( void ) const {
     return "ShrubberyCreationForm: " + AForm::toString();
 }
 
-void ShrubberyCreationForm::execute(const Bureaucrat& bureaucrat) const {
+void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
     
     if (!this->getSigned()) 
         throw NotSignedException();
 
-    if (bureaucrat.getGrade() > this->getGradeToExecute()) 
+    if (executor.getGrade() > this->getGradeToExecute()) 
         throw GradeTooLowException();
 
 
-    std::ofstream fout( (this->getName() + "_shrubbery").c_str());    
+    std::ofstream fout( (this->_target + "_shrubbery").c_str());    
 
     fout << "                      ___" << std::endl;
     fout << "                _,-'\"\"   \"\"\"\"`--." << std::endl;

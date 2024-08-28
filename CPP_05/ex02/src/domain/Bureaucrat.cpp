@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:40:55 by joao              #+#    #+#             */
-/*   Updated: 2024/08/24 14:51:13 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 23:10:01 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,15 @@ Bureaucrat::Bureaucrat( const std::string& name, unsigned char grade) : name(nam
 Bureaucrat::~Bureaucrat() { }
 
 void Bureaucrat::increment( void ) {
-    if (this->grade - 1 < 1)
+    if (this->grade -1 < 1)
         throw GradeTooHighException();
-    this->grade--;
+    --this->grade;
 }
 
 void Bureaucrat::decrement( void ) {
-    if (this->grade - 1 < 1)
+    if (this->grade + 1 > 150)
         throw GradeTooLowException(); 
-    this->grade++;
+    ++this->grade;
 }
 
 const Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {

@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:33:25 by joao              #+#    #+#             */
-/*   Updated: 2024/08/24 16:38:21 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 23:27:19 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int main( void ) {
     {
         std::cout << "------------- ShrubberyCreationForm::execute  --------------" << std::endl; 
-        ShrubberyCreationForm scForm;
+        ShrubberyCreationForm scForm("scForm");
 
         Bureaucrat mike("mike", 1);
         std::cout << mike << std::endl;
@@ -31,7 +31,7 @@ int main( void ) {
 
     } 
     {
-        ShrubberyCreationForm scForm;
+        ShrubberyCreationForm scForm("scForm");
         
         Bureaucrat bob("bob", 150); 
         std::cout << bob << std::endl;
@@ -46,7 +46,7 @@ int main( void ) {
 
         Bureaucrat alice("alice", 74);
         
-        RobotomyRequestForm rrForm;
+        RobotomyRequestForm rrForm("rrForm");
 
         alice.signForm(rrForm);
 
@@ -61,7 +61,7 @@ int main( void ) {
         std::cout << "------------- PresidentialPardonForm::execute  --------------" << std::endl; 
 
 
-        PresidentialPardonForm ppForm;
+        PresidentialPardonForm ppForm("ppForm");
 
         Bureaucrat alice("alice", 26);
         

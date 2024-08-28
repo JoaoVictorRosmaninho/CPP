@@ -22,8 +22,10 @@
 class Bureaucrat;
 
 class PresidentialPardonForm : public AForm {
+    private:
+        std::string _target;
+
     public:
-        PresidentialPardonForm( void );
         PresidentialPardonForm( std::string name );
         PresidentialPardonForm( const PresidentialPardonForm& other);
 
