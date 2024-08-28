@@ -6,50 +6,47 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 23:06:34 by joao              #+#    #+#             */
-/*   Updated: 2024/08/23 23:49:24 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 22:43:50 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form( void ) {
-    this->_name          = "";
-    this->_signed        = false;
-    this->_signedGrade   = 150;
-    this->_executeGrade  = 150;
-}
+Form::Form( void ) 
+          : _name(""),
+            _signed(false),
+            _signedGrade(150),
+            _executeGrade(150) { }
 
-Form::~Form( void ) {
-    
-}
+Form::~Form( void ) { }
 
-Form::Form(const std::string name, bool is_signed, int signedGrade, int executedGrade) {
+Form::Form(const std::string name, bool is_signed, const int signedGrade, const int executedGrade) 
+          : _name(name),
+            _signed(is_signed),
+            _signedGrade(signedGrade),
+            _executeGrade(executedGrade) 
+{
     
-    if (signedGrade < 1)   throw GradeToHighException();
-    if (signedGrade > 150) throw GradeTooLowException();
+    if ( signedGrade < 1 || executedGrade < 1 ) 
+        throw GradeToHighException();
     
-    if (executedGrade < 1)   throw GradeToHighException();
-    if (executedGrade > 150) throw GradeTooLowException();
-    
-    this->_name          = name;
-    this->_signed        = is_signed;
-    this->_signedGrade   = signedGrade;
-    this->_executeGrade  = executedGrade;
+    if (signedGrade > 150 || executedGrade > 150) 
+        throw GradeTooLowException();
 }
 
 
-Form::Form(const Form& other) :  _name(other._name) {
-    this->_signed        = other._signed;
-    this->_signedGrade   = other._signedGrade;
-    this->_executeGrade  = other._executeGrade;
-}
+Form::Form(const Form& other) 
+          :  _name(other._name),
+             _signed(other.getSigned()),
+             _signedGrade(other.getSignedGrade()),
+             _executeGrade(other.getExecutedGrade()) { }
 
 
 const Form& Form::operator=(const Form& other) {
-    this->_name          = other.getName();
-    this->_signed        = other._signed;
-    this->_signedGrade   = other._signedGrade;
-    this->_executeGrade  = other._executeGrade;
+    if (this == &other) 
+        return (*this);
+
+    this->_signed = other.getSigned();
 
     return (*this);
 }

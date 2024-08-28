@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:33:25 by joao              #+#    #+#             */
-/*   Updated: 2024/08/24 00:02:28 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 22:49:12 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,22 +25,9 @@ int main( void ) {
 
     Form form("Login", false, 30, 40);
     
-
     bob.signForm(form);
+    
     mike.signForm(form);
-
-    try {
-        Bureaucrat alice("alice", 0);
-    } catch ( Bureaucrat::GradeTooHighException& e ) {
-        std::cout << "Caught GradeTooHighException" << std::endl;
-
-        std::cout << e.what() << std::endl;    
-    } catch ( Bureaucrat::GradeTooLowException& e) {
-        std::cout << "Caught GradeTooLowExcpetion" << std::endl;
-
-        std::cout << e.what() << std::endl;
-    }
-
 
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:40:55 by joao              #+#    #+#             */
-/*   Updated: 2024/08/23 23:59:37 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 22:27:39 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ Bureaucrat::~Bureaucrat() { }
 void Bureaucrat::increment( void ) {
     if (this->grade - 1 < 1)
         throw GradeTooHighException();
-    this->grade--;
+    --this->grade;
 }
 
 void Bureaucrat::decrement( void ) {
-    if (this->grade - 1 < 1)
+    if (this->grade + 1 > 150)
         throw GradeTooLowException(); 
-    this->grade++;
+    ++this->grade;
 }
 
 const Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {

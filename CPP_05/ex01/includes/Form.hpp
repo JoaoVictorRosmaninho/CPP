@@ -11,29 +11,30 @@
 class Bureaucrat;
 class Form {
     private:
-        std::string _name;
+        const std::string _name;
 
-        bool  _signed;
+        bool              _signed;
 
-        int _signedGrade;
-        int _executeGrade;
+        const int         _signedGrade;
+        
+        const int         _executeGrade;
     public:
          Form();
          Form(const Form& other);
          Form(std::string name, bool is_signed, int signedGrade, int executeGrade);
         ~Form();
 
-
         const Form& operator=(const Form& other);
 
         std::string getName( void ) const;
         
-        bool  getSigned( void ) const;
+        bool        getSigned( void ) const;
         
-        int getSignedGrade(void) const;
-        int getExecutedGrade(void) const;
+        int         getSignedGrade(void) const;
+        
+        int         getExecutedGrade(void) const;
 
-        void beSigned(const Bureaucrat& bureaucrat);
+        void        beSigned(const Bureaucrat& bureaucrat);
 
         class GradeToHighException : std::exception {
             public:
