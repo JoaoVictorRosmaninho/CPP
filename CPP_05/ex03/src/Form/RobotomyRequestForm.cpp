@@ -12,14 +12,13 @@
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm( const RobotomyRequestForm& other ) 
-                                            : AForm(other) { }
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) 
+                                            : AForm(other),
+                                              _target(other._target) { }
 
-RobotomyRequestForm::RobotomyRequestForm( void )
-                                            : AForm("RobotomyRequestForm", false, 72, 45) { }
-
-RobotomyRequestForm::RobotomyRequestForm( std::string name )
-                                            : AForm(name, false, 72, 45) { }
+RobotomyRequestForm::RobotomyRequestForm(std::string target)
+                                            : AForm("RobotomyRequestForm", false, 72, 45),
+                                              _target(target) { }
 
 
 RobotomyRequestForm::~RobotomyRequestForm( void ) { }
@@ -28,19 +27,19 @@ std::string RobotomyRequestForm::toString( void ) const {
     return "RobotomyRequestForm: " + AForm::toString();
 }
 
-void RobotomyRequestForm::execute(const Bureaucrat& bureaucrat) const {
+void RobotomyRequestForm::execute(const Bureaucrat& executor) const {
     if (!this->getSigned()) 
         throw NotSignedException();
 
-    if (bureaucrat.getGrade() > this->getGradeToExecute()) 
+    if (executor.getGrade() > this->getGradeToExecute()) 
         throw GradeTooLowException();
 
     std::srand(std::time(0));
 
     std::cout << "Make some drilling noises" << std::endl;
     if (std::rand() % 10 < 5) {
-        std::cout << "RobotomyRequestForm: " << bureaucrat.getName() << " has robotomized successfully! " << std::endl;
+        std::cout << "RobotomyRequestForm: " << this->_target << " has robotomized successfully! " << std::endl;
     } else {
-        std::cout << "RobotomyRequestForm: " << bureaucrat.getName() << " robotomized failed!" << std::endl;
+        std::cout << "RobotomyRequestForm: " << this->_target << " robotomized failed!" << std::endl;
     }
 }

@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/24 10:32:57 by joao              #+#    #+#             */
-/*   Updated: 2024/08/24 17:14:39 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 23:25:44 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,11 @@
 class Bureaucrat;
 
 class ShrubberyCreationForm : public AForm {
+
+    private:
+        std::string _target;
+        
     public:
-        ShrubberyCreationForm( void );
         ShrubberyCreationForm( std::string name );
         ShrubberyCreationForm( const ShrubberyCreationForm& other);
 

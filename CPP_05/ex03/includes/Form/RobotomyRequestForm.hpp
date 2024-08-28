@@ -22,9 +22,11 @@
 class Bureaucrat;
 
 class RobotomyRequestForm : public AForm {
+    private:
+        std::string _target;
+
     public:
-        RobotomyRequestForm( void );
-        RobotomyRequestForm( std::string name );
+        RobotomyRequestForm( std::string target );
         RobotomyRequestForm( const RobotomyRequestForm& other);
 
         virtual ~RobotomyRequestForm( void );
