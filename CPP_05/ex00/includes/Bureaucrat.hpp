@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/05 22:34:34 by joao              #+#    #+#             */
-/*   Updated: 2024/08/21 22:31:56 by joao             ###   ########.fr       */
+/*   Updated: 2024/08/27 22:19:02 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@
 
             ~Bureaucrat( void );
 
-            void increment( void );
-            void decrement( void );
+            void               increment( void );
+            
+            void               decrement( void );
 
             const Bureaucrat&  operator=(const Bureaucrat& other);
 
@@ -50,9 +51,9 @@
              };
             
         private:
-
             unsigned char grade;
-            const std::string& name;    
+            
+            const         std::string& name;    
     };
 
     std::ostream& operator<<( std::ostream& o, const Bureaucrat& other );
