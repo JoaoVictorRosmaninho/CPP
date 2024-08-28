@@ -6,11 +6,11 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/08/27 22:24:28 by joao             ###   ########.fr        #
+#    Updated: 2024/08/28 12:23:50 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC	   	:= clang++
+CC	   	:= c++
 NAME   	:= Bureaucrat
 CFLAGS 	:= -Wall -Wextra -Werror
 IFLAGS  := -I./includes
