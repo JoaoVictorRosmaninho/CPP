@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 21:48:14 by joao              #+#    #+#             */
-/*   Updated: 2024/09/02 22:38:46 by joao             ###   ########.fr       */
+/*   Updated: 2024/09/03 07:51:50 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,7 @@ int main(void) {
     ScalarConverter::convert("5");
     ScalarConverter::convert("42.42f");
     ScalarConverter::convert("42.42");
+    ScalarConverter::convert("nan");
+    ScalarConverter::convert("inf");
+    ScalarConverter::convert("-inf");
 }

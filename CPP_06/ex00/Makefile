@@ -6,13 +6,13 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/09/02 08:42:56 by joao             ###   ########.fr        #
+#    Updated: 2024/09/04 07:52:20 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	     := c++
 NAME   	     := ScalarConverter
-CFLAGS 	     := -Wall -Wextra -Werror
+CFLAGS 	     := -Wall -Wextra -Werror -ggdb
 STD    	     := -std=c++98
 DIST	     := obj
 
