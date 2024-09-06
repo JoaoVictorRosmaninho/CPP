@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 09:08:59 by joao              #+#    #+#             */
-/*   Updated: 2024/09/04 08:40:48 by joao             ###   ########.fr       */
+/*   Updated: 2024/09/05 23:50:14 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void ScalarConverter::printFloat(const std::string& s, Type type) {
     }
 
     float number = static_cast<float>(std::atof(s.c_str()));
-
-    std::cout << "float: " << number << "f" << std::endl; 
+    
+    std::cout << "float: " << std::fixed <<  std::setprecision(1) << number << "f" << std::endl;
 }
 
 void ScalarConverter::printDouble(const std::string& s, Type type) {
@@ -43,9 +43,10 @@ void ScalarConverter::printDouble(const std::string& s, Type type) {
         return ;
     }
 
-    float number = static_cast<double>(std::atof(s.c_str()));
+    double number = static_cast<double>(std::atof(s.c_str()));
 
-    std::cout << "double: " << number << std::endl;
+    std::cout << "double: " << std::setprecision(1) << number << std::endl;
+
 }
 
 void ScalarConverter::printChar(const std::string& s, Type type) {

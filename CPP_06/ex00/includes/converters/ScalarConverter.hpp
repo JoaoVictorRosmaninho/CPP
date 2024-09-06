@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/02 08:43:56 by joao              #+#    #+#             */
-/*   Updated: 2024/09/04 08:21:47 by joao             ###   ########.fr       */
+/*   Updated: 2024/09/05 23:52:38 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <string>
 #include <iostream>
+#include <iomanip>
 #include <cstdlib>
 #include <exception>
 #include <stddef.h>
@@ -34,6 +35,9 @@ typedef void (*func)(const std::string&, Type);
     class ScalarConverter {
 
         private:
+        
+            ScalarConverter( void );
+
             static void  printInteger(const std::string& s, Type type);
             
             static void  printFloat(const std::string& s,  Type type);
@@ -43,6 +47,7 @@ typedef void (*func)(const std::string&, Type);
             static void  printChar(const std::string& s, Type type);
 
             static Type  selectType(const std::string& s);
+        
         public:
             static void  convert(const std::string& s);
 
