@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/11 00:07:29 by joao              #+#    #+#             */
-/*   Updated: 2024/09/11 00:45:01 by joao             ###   ########.fr       */
+/*   Updated: 2024/09/11 22:20:36 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ T min(T a, T b) {
 }
 
 template <typename T>
-void swap(T a, T b) {
+void swap(T& a, T& b) {
     T tmp = a; 
     a     = b;
     b     = tmp;
