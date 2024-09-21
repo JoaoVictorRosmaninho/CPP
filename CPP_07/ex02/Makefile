@@ -6,27 +6,23 @@
 #    By: joao <joao@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/01 21:47:31 by jv                #+#    #+#              #
-#    Updated: 2024/09/07 14:43:23 by joao             ###   ########.fr        #
+#    Updated: 2024/09/11 22:26:02 by joao             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC	   	     := c++
-NAME   	     := Serialize
+NAME   	     := Array
 CFLAGS 	     := -Wall -Wextra -Werror -ggdb
 STD    	     := -std=c++98
 DIST	     := obj
 
 
-HEADERS      := $(wildcard includes/*.hpp)
-HEADERS      += $(wildcard includes/converters/*.hpp)
-HEADERS      += $(wildcard includes/serializers/*.hpp)
+HEADERS      := $(wildcard *.hpp)
 
 HEADER_DIRS  := $(dir $(HEADERS))
 IFLAGS       := $(addprefix -I, $(HEADER_DIRS) ) 
 
-SOURCES      := $(wildcard src/*.cpp)
-SOURCES      += $(wildcard src/converters/*.cpp)
-SOURCES      += $(wildcard src/serializers/*.cpp)
+SOURCES      := $(wildcard *.cpp)
 
 OBJECTS      := $(addprefix $(DIST)/, $(SOURCES:.cpp=.o))
 DIRS         := $(dir $(OBJECTS))
