@@ -6,7 +6,7 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 00:21:52 by joao              #+#    #+#             */
-/*   Updated: 2024/09/24 23:59:04 by joao             ###   ########.fr       */
+/*   Updated: 2024/09/25 21:19:48 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,7 @@ bool Span::addMember(int item ) {
     
     if (_items.size() >= _N ) throw MaxOcupationException();
 
-    std::list<int>::iterator position = std::lower_bound(_items.begin(), _items.end(), item);
-
-    if (*position == item) return false;
-
-    _items.insert(position, item);
+    _items.push_back(item);
 
     return true;
 }
@@ -48,31 +44,30 @@ unsigned int Span::shortestSpan( void ) {
     if (_items.size() < 2) throw InsuficientInputException();
 
 
-    std::list<int>::iterator first  = _items.begin();
-    std::list<int>::iterator second = _items.begin();
+    std::sort(_items.begin(), _items.end());
 
-    std::advance(second, 1);
-
-    return  std::abs(*second - *first);
+    return  std::abs(_items[1] - _items[0]);
 }
 
 unsigned int Span::longestSpan( void ) {
     if (_items.size() < 2) throw InsuficientInputException();
 
+    std::sort(_items.begin(), _items.end());
+   
     return _items.back() - _items.front();
 }
 
-const std::list<int>& Span::getItems( void ) const {
+const std::vector<int>& Span::getItems( void ) const {
     return _items;
 }
 
 std::ostream& operator<<(std::ostream &o, Span& span) {
     
-    std::list<int>::const_iterator begin = span.getItems().begin();
-    std::list<int>::const_iterator end   = span.getItems().end();
+    std::vector<int>::const_iterator begin = span.getItems().begin();
+    std::vector<int>::const_iterator end   = span.getItems().end();
     
     o << "[";
-    for (std::list<int>::const_iterator it = begin; it != end; ++it ) {         
+    for (std::vector<int>::const_iterator it = begin; it != end; ++it ) {         
         o << *it << ", ";
     }
     o << "]";

@@ -6,14 +6,14 @@
 /*   By: joao <joao@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 00:21:06 by joao              #+#    #+#             */
-/*   Updated: 2024/09/24 23:59:09 by joao             ###   ########.fr       */
+/*   Updated: 2024/09/25 21:17:47 by joao             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include <list>
+#include <vector>
 #include <iterator>
 #include <exception>
 #include <iostream>
@@ -24,7 +24,7 @@ class Span {
     private:
         unsigned int            _N;
         
-        std::list<int> _items;
+        std::vector<int> _items;
 
         bool    addNumber(unsigned int number);
 
@@ -58,7 +58,7 @@ class Span {
 
          bool                      addMember( int item );
 
-         const std::list<int>&   getItems( void ) const;
+         const std::vector<int>&   getItems( void ) const;
 
          unsigned int              shortestSpan( void );
 
