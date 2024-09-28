@@ -28,6 +28,18 @@ bool Span::addNumber(int item ) {
     return true;
 }
 
+bool Span::addManyNumbers( const int* items, size_t size ) {
+    
+    if (_items.size() >= _N ) throw MaxOcupationException();
+    
+    size_t iter = 0;
+    
+    while ( (_N - this->size()) > 0 && iter < size ) {
+      addNumber(items[iter++]);
+    }
+
+    return true;
+}
 
 const Span& Span::operator=(const Span& other) { 
     _N     = other._N;
@@ -44,12 +56,15 @@ unsigned int Span::shortestSpan( void ) {
     if (_items.size() < 2) throw InsuficientInputException();
 
     /* Sorting Algorithm*/
-    std::sort(_items.begin(), _items.end());
+    
+    std::vector<int> temp = _items;
+
+    std::sort(temp.begin(), temp.end());
 
     /* compute adjacente referente -> X1 - X0 ... */
-    std::adjacent_difference(_items.begin(), _items.end(), _items.begin());
+    std::adjacent_difference(temp.begin(), temp.end(), temp.begin());
 
-    return *std::min_element(_items.begin(), _items.end());
+    return *std::min_element(temp.begin(), temp.end());
 
 }
 

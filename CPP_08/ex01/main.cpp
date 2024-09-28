@@ -68,14 +68,12 @@ int main( void ) {
         std::cout << "shortestSpan: " << span.shortestSpan() << std::endl;
     }
     {
-        Span sp = Span(5);
+        Span sp          = Span(5);
 
-        sp.addNumber(6);
-        sp.addNumber(3);
-        sp.addNumber(17);
-        sp.addNumber(9);
-        sp.addNumber(11);
+        const int arr[] =  { 6, 3, 17, 9, 11 };
 
+        sp.addManyNumbers( arr, sizeof(arr) / sizeof(const int) ); 
+  
         std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
         std::cout << "longestSpan: "  <<  sp.longestSpan() << std::endl;
 

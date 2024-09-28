@@ -58,6 +58,8 @@ class Span {
          const Span&               operator=( const Span& other );
 
          bool                      addNumber( int item );
+         
+         bool                      addManyNumbers( const int* item, size_t size );
 
          const std::vector<int>&   getItems( void ) const;
 
