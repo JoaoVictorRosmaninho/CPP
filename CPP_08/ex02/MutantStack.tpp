@@ -56,6 +56,16 @@ unsigned int MutantStack<T>::size( void ) const {
 }
 
 template <typename T>
+typename std::vector<T>::iterator& MutantStack<T>::begin( void ) const {
+    return _stack->begin();
+}
+
+template <typename T>
+typename std::vector<T>::iterator& MutantStack<T>::end( void ) const {
+    return _stack->end();
+}
+
+template <typename T>
 std::ostream & operator<<( std::ostream & o, const MutantStack<T> & rhs ) {
 
     unsigned int i = 0;

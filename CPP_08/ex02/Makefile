@@ -12,7 +12,7 @@
 
 CC	   	     := c++
 NAME   	     := MultantStack
-CFLAGS 	     := -Wall -Wextra -Werror
+CFLAGS 	     := -Wall -Wextra -Werror 
 STD    	     := -std=c++98
 DIST	     := obj
 

@@ -38,6 +38,11 @@
              
              T            pop(void);
 
+             typename std::vector<T>::iterator& begin( void ) const;
+
+             typename std::vector<T>::iterator& end( void ) const;
+
+
              unsigned int size( void ) const;
     };
 
