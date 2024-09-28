@@ -13,50 +13,17 @@
 #define MUTANTSTACK_HPP
 
 #include <iostream>
-#include <vector>
-#include <iterator>
-
+#include <stack>
 
     template <typename T>
-    class MutantStack {
-
-        private:
-            std::vector<T>*  _stack;
+    class MutantStack : public std::stack<T> {
         public:
-
-             MutantStack( void );
-            ~MutantStack( void );
-             MutantStack( const MutantStack<T>& other);
-
-             const T&                          operator=(const MutantStack<T>& other);
-             
-             const T&                          operator[](unsigned int index) const;
-
-             T&                                push(T& item);
-             
-             const T&                          push(const T& item);
-             
-             T                                 pop(void);
-
-             const T&                          top( void ) const;
-             
-             bool                              empty( void ) const;
-
-             typename std::vector<T>::iterator begin( void ) const;
-             
-             typename std::vector<T>::iterator end( void ) const;
-
-
-             unsigned int                      size( void ) const;
-
-
-             typedef typename std::vector<T>::iterator iterator; 
+             typedef typename std::stack<T>::container_type::iterator iterator; 
+              
+             MutantStack::iterator begin();
+             MutantStack::iterator end();
 
     };
-
-    template <typename T>
-    std::ostream & operator<<( std::ostream & o, const MutantStack<T> & rhs );
-
 
     #include "MutantStack.tpp"
 

@@ -10,81 +10,32 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-template <typename T>
-MutantStack<T>::MutantStack( void ) : _stack(new std::vector<T>()) {}
+
+#include "MutantStack.hpp"
 
 template <typename T>
-MutantStack<T>::~MutantStack( void ) {
-    delete _stack;
+typename MutantStack<T>::iterator MutantStack<T>::begin( void ) {
+  return this->c.begin();  
 }
 
 template <typename T>
-MutantStack<T>::MutantStack( const MutantStack& other) : _stack(other._stack) {}
-
+typename MutantStack<T>::iterator MutantStack<T>::end( void ) {
+  return this->c.end();
+}
 
 template <typename T>
-T& MutantStack<T>::push(T& item) {
+std::ostream& operator<<( std::ostream& o, MutantStack<T> stack ) {
     
-    typename std::vector<T>::iterator it = _stack->begin();
+    typename MutantStack<T>::iterator it = stack.begin();
+  
+    o << "["; 
 
-    _stack->insert(it, item);
+    do {
+        o << *(it++) << ", ";
+    } while ( it < --stack.end() );
 
-    return item;
-}
-
-
-template <typename T>
-const T& MutantStack<T>::push(const T& item) {
+    o << *it << "]";
     
-    typename std::vector<T>::iterator it = _stack->begin();
-
-    _stack->insert(it, item);
-
-    return item;
-}
-
-template <typename T>
-const T& MutantStack<T>::operator[](unsigned int index ) const {
-    if (index > size() ) return  _stack->back();
-
-    return _stack->operator[](index);
-}
-
-template <typename T>
-unsigned int MutantStack<T>::size( void ) const {
-    return _stack->size();
-}
-
-template <typename T>
-const T& MutantStack<T>::top( void ) const {
-  return  _stack->front();
-}
-
-template <typename T>
-bool MutantStack<T>::empty( void ) const {
-  return size() == 0;
-}
-
-template <typename T>
-typename std::vector<T>::iterator MutantStack<T>::begin( void ) const {
-    return _stack->begin();
-}
-
-template <typename T>
-typename std::vector<T>::iterator MutantStack<T>::end( void ) const {
-    return   _stack->end();
-}
-
-template <typename T>
-std::ostream & operator<<( std::ostream & o, const MutantStack<T> & rhs ) {
-
-    unsigned int i = 0;
-
-    o << "[";
-    for( ; i < rhs.size() - 1 ; i++) {
-        std::cout << rhs[i] << ",";
-    }
-    std::cout << rhs[i] <<"]";
     return o;
 }
 
