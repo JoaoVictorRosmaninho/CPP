@@ -56,13 +56,23 @@ unsigned int MutantStack<T>::size( void ) const {
 }
 
 template <typename T>
-typename std::vector<T>::iterator& MutantStack<T>::begin( void ) const {
+const T& MutantStack<T>::top( void ) const {
+  return  _stack->front();
+}
+
+template <typename T>
+bool MutantStack<T>::empty( void ) const {
+  return size() == 0;
+}
+
+template <typename T>
+typename std::vector<T>::iterator MutantStack<T>::begin( void ) const {
     return _stack->begin();
 }
 
 template <typename T>
-typename std::vector<T>::iterator& MutantStack<T>::end( void ) const {
-    return _stack->end();
+typename std::vector<T>::iterator MutantStack<T>::end( void ) const {
+    return   _stack->end();
 }
 
 template <typename T>

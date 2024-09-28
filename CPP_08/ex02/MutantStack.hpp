@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   MutantStack.hpp                                    :+:      :+:    :+:   */
@@ -29,21 +28,30 @@
             ~MutantStack( void );
              MutantStack( const MutantStack<T>& other);
 
-             const T& operator=(const MutantStack<T>& other);
-             const T& operator[](unsigned int index) const;
-
-             T&           push(T& item);
+             const T&                          operator=(const MutantStack<T>& other);
              
-             const T&     push(const T& item);
+             const T&                          operator[](unsigned int index) const;
+
+             T&                                push(T& item);
              
-             T            pop(void);
+             const T&                          push(const T& item);
+             
+             T                                 pop(void);
 
-             typename std::vector<T>::iterator& begin( void ) const;
+             const T&                          top( void ) const;
+             
+             bool                              empty( void ) const;
 
-             typename std::vector<T>::iterator& end( void ) const;
+             typename std::vector<T>::iterator begin( void ) const;
+             
+             typename std::vector<T>::iterator end( void ) const;
 
 
-             unsigned int size( void ) const;
+             unsigned int                      size( void ) const;
+
+
+             typedef typename std::vector<T>::iterator iterator; 
+
     };
 
     template <typename T>
