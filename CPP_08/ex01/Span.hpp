@@ -14,6 +14,7 @@
 #define SPAN_HPP
 
 #include <vector>
+#include <numeric>
 #include <iterator>
 #include <exception>
 #include <iostream>
@@ -56,7 +57,7 @@ class Span {
 
          const Span&               operator=( const Span& other );
 
-         bool                      addMember( int item );
+         bool                      addNumber( int item );
 
          const std::vector<int>&   getItems( void ) const;
 

@@ -20,17 +20,17 @@ int main( void ) {
     {
         Span span(4);
 
-        span.addMember(7);
-        span.addMember(1);
-        span.addMember(1);
-        span.addMember(3);
+        span.addNumber(7);
+        span.addNumber(1);
+        span.addNumber(1);
+        span.addNumber(3);
 
         std::cout << "size must be 3: " << span.size() << std::endl;
         std::cout << "longestSpan: " << span.longestSpan() << std::endl;
         std::cout << "shortestSpan: " << span.shortestSpan() << std::endl;
 
         try {
-            span.addMember(4);
+            span.addNumber(4);
         } catch( Span::MaxOcupationException& e) {
             std::cout << "expect to raise a exception" << e.what() << std::endl;
         }
@@ -40,13 +40,13 @@ int main( void ) {
     {
         Span span(7);
 
-        span.addMember(5);
-        span.addMember(6);
-        span.addMember(11);
-        span.addMember(9);
-        span.addMember(3);
-        span.addMember(15);
-        span.addMember(1);
+        span.addNumber(5);
+        span.addNumber(6);
+        span.addNumber(11);
+        span.addNumber(9);
+        span.addNumber(3);
+        span.addNumber(15);
+        span.addNumber(1);
 
 
         std::cout << "LongestSpan: " << span.longestSpan() << std::endl;
@@ -61,11 +61,26 @@ int main( void ) {
         std::srand(static_cast<unsigned int>(13));
     
         for ( unsigned int i = 0; i < 40000; i++) {
-            span.addMember( std::rand() % 100000 + 1);
+            span.addNumber( std::rand() % 100000 + 1);
         }
 
         std::cout << "LongestSpan: " << span.longestSpan() << std::endl;
         std::cout << "shortestSpan: " << span.shortestSpan() << std::endl;
+    }
+    {
+        Span sp = Span(5);
+
+        sp.addNumber(6);
+        sp.addNumber(3);
+        sp.addNumber(17);
+        sp.addNumber(9);
+        sp.addNumber(11);
+
+        std::cout << "shortestSpan: " << sp.shortestSpan() << std::endl;
+        std::cout << "longestSpan: "  <<  sp.longestSpan() << std::endl;
+
+        std::cout << "items: " << sp << std::endl;
+
     }
 
     

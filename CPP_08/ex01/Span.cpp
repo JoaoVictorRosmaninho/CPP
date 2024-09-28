@@ -19,7 +19,7 @@ Span::Span( const Span& other ) : _N(other._N), _items(other._items) {};
 Span::~Span( void ) { }
 
 
-bool Span::addMember(int item ) {
+bool Span::addNumber(int item ) {
     
     if (_items.size() >= _N ) throw MaxOcupationException();
 
@@ -43,10 +43,14 @@ unsigned int Span::size( void ) {
 unsigned int Span::shortestSpan( void ) {
     if (_items.size() < 2) throw InsuficientInputException();
 
-
+    /* Sorting Algorithm*/
     std::sort(_items.begin(), _items.end());
 
-    return  std::abs(_items[1] - _items[0]);
+    /* compute adjacente referente -> X1 - X0 ... */
+    std::adjacent_difference(_items.begin(), _items.end(), _items.begin());
+
+    return *std::min_element(_items.begin(), _items.end());
+
 }
 
 unsigned int Span::longestSpan( void ) {
@@ -63,13 +67,13 @@ const std::vector<int>& Span::getItems( void ) const {
 
 std::ostream& operator<<(std::ostream &o, Span& span) {
     
-    std::vector<int>::const_iterator begin = span.getItems().begin();
-    std::vector<int>::const_iterator end   = span.getItems().end();
+    std::vector<int>::const_iterator it  = span.getItems().begin();
+    std::vector<int>::const_iterator end = span.getItems().end();
     
     o << "[";
-    for (std::vector<int>::const_iterator it = begin; it != end; ++it ) {         
+    for ( ; it < --end; ++it ) {         
         o << *it << ", ";
     }
-    o << "]";
+    o << *it << "]";
     return o;
 }
