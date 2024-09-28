@@ -22,7 +22,7 @@
     class MutantStack {
 
         private:
-            const std::vector<T>*  _stack;
+            std::vector<T>*  _stack;
         public:
 
              MutantStack( void );
@@ -32,8 +32,11 @@
              const T& operator=(const MutantStack<T>& other);
              const T& operator[](unsigned int index) const;
 
-             T  push(T item);
-             T  pop(void);
+             T&           push(T& item);
+             
+             const T&     push(const T& item);
+             
+             T            pop(void);
 
              unsigned int size( void ) const;
     };

@@ -20,6 +20,6 @@ int main( void ) {
     stack.push(2);
     stack.push(3);
 
-
     std::cout << stack << std::endl;
 }
+

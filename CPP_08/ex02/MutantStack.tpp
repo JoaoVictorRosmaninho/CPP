@@ -23,14 +23,29 @@ MutantStack<T>::MutantStack( const MutantStack& other) : _stack(other._stack) {}
 
 
 template <typename T>
-T MutantStack<T>::push(T item) {
-    _stack->push_back(item);
+T& MutantStack<T>::push(T& item) {
+    
+    typename std::vector<T>::iterator it = _stack->begin();
+
+    _stack->insert(it, item);
+
+    return item;
+}
+
+
+template <typename T>
+const T& MutantStack<T>::push(const T& item) {
+    
+    typename std::vector<T>::iterator it = _stack->begin();
+
+    _stack->insert(it, item);
+
     return item;
 }
 
 template <typename T>
 const T& MutantStack<T>::operator[](unsigned int index ) const {
-    if (index > size() ) return  _stack.back();
+    if (index > size() ) return  _stack->back();
 
     return _stack->operator[](index);
 }
@@ -46,10 +61,10 @@ std::ostream & operator<<( std::ostream & o, const MutantStack<T> & rhs ) {
     unsigned int i = 0;
 
     o << "[";
-    for( ; i < rhs.size() - 1; i++) {
+    for( ; i < rhs.size() - 1 ; i++) {
         std::cout << rhs[i] << ",";
     }
-    std::cout << rhs[++i] << "]";
+    std::cout << rhs[i] <<"]";
     return o;
 }
 
